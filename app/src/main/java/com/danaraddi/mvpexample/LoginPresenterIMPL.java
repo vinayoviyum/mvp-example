@@ -17,7 +17,7 @@ public class LoginPresenterIMPL implements LoginPresenter {
     @Override
     public void login(String username, String password) {
 
-        if(TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+        if(username.isEmpty() || username.isEmpty()) {
             loginView.showLoginValidationError();
         }else if(username.equals("abc") && password.equals("xyz")){
             loginView.loginSuccess();

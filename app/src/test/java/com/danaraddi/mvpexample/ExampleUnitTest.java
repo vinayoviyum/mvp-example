@@ -9,7 +9,23 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void ThisLoginTestShouldPass() throws Exception {
+        LoginPresenter loginPresenter = new LoginPresenterIMPL(new LoginView() {
+            @Override
+            public void showLoginValidationError() {
+                System.out.print("error");
+            }
+
+            @Override
+            public void loginSuccess() {
+                System.out.print("Success");
+            }
+
+            @Override
+            public void loginFailure() {
+                System.out.print("Failure");
+            }
+        });
+        loginPresenter.login("abc","xyz");
     }
 }
